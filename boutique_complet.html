@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Boutique - Henry Production</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Henry <span>Production</span></h1>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="boutique_complet.html">Boutique</a>
+    <a href="apropos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Boutique complète Henry Production</h2>
+  <p>Choisissez votre produit, personnalisez-le et commandez via WhatsApp</p>
+</section>
+
+<form class="form" id="formBoutique">
+  <label>Nom du client</label>
+  <input type="text" id="nom" required>
+
+  <label>Texte / message à imprimer</label>
+  <input type="text" id="texte">
+
+  <label>Envoyer la photo</label>
+  <input type="file" id="photo">
+
+  <label>Produit</label>
+  <select id="produit" onchange="majOptions()">
+    <option value="Tableau PVC">Tableau PVC</option>
+    <option value="Tasse">Tasse</option>
+    <option value="Porte-clé">Porte-clé</option>
+    <option value="Bidon">Bidon</option>
+    <option value="Agenda / Cahier">Agenda / Cahier</option>
+    <option value="Bijoux">Bijoux</option>
+    <option value="Bourse">Bourse</option>
+    <option value="Maillot">Impression Maillot</option>
+    <option value="Plaque Céramique">Plaque Céramique</option>
+    <option value="Autres">Autres</option>
+  </select>
+
+  <label>Options / Dimensions</label>
+  <select id="options" onchange="calculPrix()"></select>
+
+  <p><strong>Prix :</strong> <span id="prix">0</span> Gdes</p>
+
+  <label>Paiement</label>
+  <select id="paiement">
+    <option>MonCash</option>
+    <option>NatCash</option>
+  </select>
+
+  <button type="button" class="btn" onclick="commanderProduit()">Commander via WhatsApp</button>
+</form>
+
+<script src="js/script_boutique.js"></script>
+</body>
+</html>
