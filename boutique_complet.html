@@ -2,64 +2,783 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Boutique - Henry Production</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Boutique Henry Production — créations personnalisées, tableaux PVC, tasses, porte-clés, bidons et cadeaux.">
+
+  <meta name="theme-color" content="#0A0A0A">
+
+  <title>Boutique | Henry Production</title>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <header>
-  <h1>Henry <span>Production</span></h1>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="boutique_complet.html">Boutique</a>
-    <a href="apropos.html">À propos</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="container">
+    <h1>Henry <span>Production</span></h1>
+
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="boutique_complet.html" class="active">Boutique</a>
+      <a href="apropos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-  <h2>Boutique complète Henry Production</h2>
-  <p>Choisissez votre produit, personnalisez-le et commandez via WhatsApp</p>
-</section>
 
-<form class="form" id="formBoutique">
-  <label>Nom du client</label>
-  <input type="text" id="nom" required>
+<main>
 
-  <label>Texte / message à imprimer</label>
-  <input type="text" id="texte">
+  <!-- INTRODUCTION -->
+  <section class="hero">
+    <div class="container">
 
-  <label>Envoyer la photo</label>
-  <input type="file" id="photo">
+      <p class="eyebrow">HENRY PRODUCTION</p>
 
-  <label>Produit</label>
-  <select id="produit" onchange="majOptions()">
-    <option value="Tableau PVC">Tableau PVC</option>
-    <option value="Tasse">Tasse</option>
-    <option value="Porte-clé">Porte-clé</option>
-    <option value="Bidon">Bidon</option>
-    <option value="Agenda / Cahier">Agenda / Cahier</option>
-    <option value="Bijoux">Bijoux</option>
-    <option value="Bourse">Bourse</option>
-    <option value="Maillot">Impression Maillot</option>
-    <option value="Plaque Céramique">Plaque Céramique</option>
-    <option value="Autres">Autres</option>
-  </select>
+      <h2>Votre idée mérite<br>quelque chose d'unique.</h2>
 
-  <label>Options / Dimensions</label>
-  <select id="options" onchange="calculPrix()"></select>
+      <p>
+        Choisissez une création, racontez-nous ce que vous imaginez
+        et nous préparons votre commande.
+      </p>
 
-  <p><strong>Prix :</strong> <span id="prix">0</span> Gdes</p>
+      <a href="#commande" class="btn">
+        Commencer ma commande
+      </a>
 
-  <label>Paiement</label>
-  <select id="paiement">
-    <option>MonCash</option>
-    <option>NatCash</option>
-  </select>
+    </div>
+  </section>
 
-  <button type="button" class="btn" onclick="commanderProduit()">Commander via WhatsApp</button>
-</form>
 
+  <!-- PETITE INTRO HUMAINE -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-title">
+        <p class="eyebrow">COMMENT ÇA MARCHE ?</p>
+
+        <h2>Pas besoin de tout savoir.</h2>
+
+        <p>
+          Vous pouvez simplement nous expliquer votre idée.
+          Nous vous aiderons à choisir le produit et le modèle
+          qui correspondent à votre projet.
+        </p>
+      </div>
+
+
+      <div class="grid">
+
+        <div class="card">
+          <span class="card-number">01</span>
+          <h3>Choisissez</h3>
+          <p>
+            Sélectionnez le produit que vous souhaitez personnaliser.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="card-number">02</span>
+          <h3>Personnalisez</h3>
+          <p>
+            Ajoutez votre texte, votre idée et votre photo si nécessaire.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="card-number">03</span>
+          <h3>Parlons-en</h3>
+          <p>
+            Votre demande est envoyée sur WhatsApp pour finaliser
+            les détails avec nous.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FORMULAIRE -->
+  <section class="section" id="commande">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <p class="eyebrow">VOTRE PROJET</p>
+
+        <h2>Parlons de votre idée.</h2>
+
+        <p>
+          Remplissez seulement les informations que vous connaissez.
+          Pour le reste, nous pouvons vous conseiller.
+        </p>
+
+      </div>
+
+
+      <form class="form" id="formBoutique">
+
+        <!-- NOM -->
+        <label for="nom">
+          Votre nom
+        </label>
+
+        <input
+          type="text"
+          id="nom"
+          name="nom"
+          placeholder="Ex. Jean"
+          autocomplete="name"
+          required
+        >
+
+
+        <!-- MESSAGE -->
+        <label for="texte">
+          Que voulez-vous personnaliser ?
+        </label>
+
+        <textarea
+          id="texte"
+          name="texte"
+          rows="4"
+          placeholder="Ex. Je voudrais écrire « Bonne fête maman »..."
+        ></textarea>
+
+
+        <!-- PHOTO -->
+        <label for="photo">
+          Votre photo
+        </label>
+
+        <input
+          type="file"
+          id="photo"
+          name="photo"
+          accept="image/*"
+        >
+
+        <small>
+          Si votre création nécessite une photo, vous pourrez nous
+          l'envoyer directement sur WhatsApp.
+        </small>
+
+
+        <!-- PRODUIT -->
+        <label for="produit">
+          Qu'est-ce que vous voulez créer ?
+        </label>
+
+        <select
+          id="produit"
+          name="produit"
+          onchange="majOptions()"
+        >
+
+          <option value="Tableau PVC">
+            Tableau PVC
+          </option>
+
+          <option value="Tasse">
+            Tasse
+          </option>
+
+          <option value="Porte-clé">
+            Porte-clé
+          </option>
+
+          <option value="Bidon">
+            Bidon / Tumbler
+          </option>
+
+          <option value="Agenda / Cahier">
+            Agenda / Cahier
+          </option>
+
+          <option value="Bijoux">
+            Bijoux
+          </option>
+
+          <option value="Bourse">
+            Bourse
+          </option>
+
+          <option value="Maillot">
+            Impression Maillot
+          </option>
+
+          <option value="Plaque Céramique">
+            Plaque Céramique
+          </option>
+
+          <option value="Autres">
+            Autres
+          </option>
+
+        </select>
+
+
+        <!-- OPTION -->
+        <label for="options">
+          Format / modèle
+        </label>
+
+        <select
+          id="options"
+          name="options"
+          onchange="calculPrix()"
+        ></select>
+
+
+        <!-- PRIX -->
+        <div class="price-box">
+
+          <span class="price-label">
+            Prix indicatif
+          </span>
+
+          <strong>
+            <span id="prix">0</span> Gdes
+          </strong>
+
+        </div>
+
+        <small>
+          Pour les créations dont le prix dépend du design ou de la
+          quantité, nous confirmerons le prix sur WhatsApp.
+        </small>
+
+
+        <!-- PAIEMENT -->
+        <label for="paiement">
+          Moyen de paiement
+        </label>
+
+        <select
+          id="paiement"
+          name="paiement"
+        >
+
+          <option value="MonCash">
+            MonCash
+          </option>
+
+          <option value="NatCash">
+            NatCash
+          </option>
+
+        </select>
+
+
+        <!-- ZONE -->
+        <label for="zone">
+          Votre zone / quartier
+        </label>
+
+        <input
+          type="text"
+          id="zone"
+          name="zone"
+          placeholder="Ex. Delmas, Pétion-Ville..."
+        >
+
+
+        <!-- RÉSUMÉ -->
+        <div class="order-summary">
+
+          <div class="summary-title">
+            Votre demande
+          </div>
+
+          <div class="summary-row">
+            <span>Produit</span>
+            <strong id="resumeProduit">
+              Tableau PVC
+            </strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Format</span>
+            <strong id="resumeOption">
+              —
+            </strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Prix</span>
+            <strong>
+              <span id="resumePrix">0</span> Gdes
+            </strong>
+          </div>
+
+        </div>
+
+
+        <!-- BOUTON -->
+        <button
+          type="button"
+          class="btn"
+          onclick="preparerCommande()"
+        >
+          Vérifier ma commande
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONFIRMATION -->
+  <section
+    class="section confirmation-section"
+    id="confirmation"
+    style="display:none;"
+  >
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <p class="eyebrow">DERNIÈRE ÉTAPE</p>
+
+        <h2>Voici votre demande.</h2>
+
+        <p>
+          Vérifiez les informations avant de nous envoyer votre commande.
+        </p>
+
+      </div>
+
+
+      <div class="confirmation-card">
+
+        <div id="confirmationDetails"></div>
+
+
+        <div class="confirmation-actions">
+
+          <button
+            type="button"
+            class="btn"
+            onclick="envoyerCommandeWhatsApp()"
+          >
+            Confirmer sur WhatsApp
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="modifierCommande()"
+          >
+            Modifier
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MESSAGE HUMAIN -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="quote-box">
+
+        <p>
+          « Une idée peut commencer par quelques mots,
+          une photo ou simplement une envie.
+          Le reste, on peut le construire ensemble. »
+        </p>
+
+        <strong>
+          — Henry Production
+        </strong>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="container">
+
+    <h2>
+      Henry <span>Production</span>
+    </h2>
+
+    <p>
+      Créations personnalisées pensées pour vous.
+    </p>
+
+    <p>
+      WhatsApp :
+      <a
+        href="https://wa.me/50941626470"
+        target="_blank"
+        rel="noopener"
+      >
+        +509 41 62 64 70
+      </a>
+    </p>
+
+    <p>
+      © 2026 Henry Production — Tous droits réservés.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<!-- CHATBOT -->
+<script src="js/chatbot.js"></script>
+
+
+<!-- CATALOGUE ET COMMANDE -->
 <script src="js/script_boutique.js"></script>
+
+
+<script>
+
+  /*
+   * Henry Production
+   * Parcours de commande
+   */
+
+  let commande = {};
+
+
+  /*
+   * Mettre à jour le résumé
+   */
+  function mettreAJourResume() {
+
+    const produit =
+      document.getElementById("produit").value;
+
+    const options =
+      document.getElementById("options");
+
+    const option =
+      options.options[options.selectedIndex]
+        ? options.options[options.selectedIndex].text
+        : "—";
+
+    const prix =
+      document.getElementById("prix").innerText;
+
+
+    document.getElementById("resumeProduit").innerText =
+      produit;
+
+    document.getElementById("resumeOption").innerText =
+      option;
+
+    document.getElementById("resumePrix").innerText =
+      prix;
+  }
+
+
+  /*
+   * Préparer la commande
+   */
+  function preparerCommande() {
+
+    const nom =
+      document.getElementById("nom").value.trim();
+
+    const texte =
+      document.getElementById("texte").value.trim();
+
+    const produit =
+      document.getElementById("produit").value;
+
+    const options =
+      document.getElementById("options");
+
+    const option =
+      options.options[options.selectedIndex]
+        ? options.options[options.selectedIndex].text
+        : "";
+
+    const prix =
+      document.getElementById("prix").innerText;
+
+    const paiement =
+      document.getElementById("paiement").value;
+
+    const zone =
+      document.getElementById("zone").value.trim();
+
+    const photo =
+      document.getElementById("photo").files.length > 0
+        ? "Oui"
+        : "Non";
+
+
+    /*
+     * Vérification du nom
+     */
+    if (!nom) {
+
+      alert("Indiquez votre nom avant de continuer.");
+
+      document.getElementById("nom").focus();
+
+      return;
+    }
+
+
+    /*
+     * Sauvegarde de la commande
+     */
+    commande = {
+
+      nom: nom,
+
+      texte: texte || "Non précisé",
+
+      produit: produit,
+
+      option: option,
+
+      prix: prix,
+
+      paiement: paiement,
+
+      zone: zone || "À préciser",
+
+      photo: photo
+
+    };
+
+
+    /*
+     * Affichage du résumé
+     */
+    document.getElementById(
+      "confirmationDetails"
+    ).innerHTML = `
+
+      <div class="summary-row">
+        <span>Client</span>
+        <strong>${echapper(commande.nom)}</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Produit</span>
+        <strong>${echapper(commande.produit)}</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Format / modèle</span>
+        <strong>${echapper(commande.option)}</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Personnalisation</span>
+        <strong>${echapper(commande.texte)}</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Photo</span>
+        <strong>${commande.photo}</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Prix indicatif</span>
+        <strong>${echapper(commande.prix)} Gdes</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Paiement</span>
+        <strong>${echapper(commande.paiement)}</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Zone</span>
+        <strong>${echapper(commande.zone)}</strong>
+      </div>
+
+    `;
+
+
+    /*
+     * Afficher la confirmation
+     */
+    document.getElementById(
+      "confirmation"
+    ).style.display = "block";
+
+
+    /*
+     * Faire défiler vers la confirmation
+     */
+    document.getElementById(
+      "confirmation"
+    ).scrollIntoView({
+      behavior: "smooth"
+    });
+
+  }
+
+
+  /*
+   * Envoyer sur WhatsApp
+   */
+  function envoyerCommandeWhatsApp() {
+
+    if (!commande.nom) {
+
+      alert("Veuillez préparer votre commande.");
+
+      return;
+    }
+
+
+    const message =
+
+`Bonjour Henry Production.
+
+Je souhaite passer une commande.
+
+━━━━━━━━━━━━━━━━━━
+👤 CLIENT
+Nom : ${commande.nom}
+
+🛍️ PRODUIT
+Produit : ${commande.produit}
+Format / modèle : ${commande.option}
+
+✍️ PERSONNALISATION
+${commande.texte}
+
+📷 PHOTO
+${commande.photo}
+
+💰 PRIX INDICATIF
+${commande.prix} Gdes
+
+💳 PAIEMENT
+${commande.paiement}
+
+📍 ZONE
+${commande.zone}
+━━━━━━━━━━━━━━━━━━
+
+Je souhaite confirmer cette demande avec vous.
+
+Merci.`;
+
+
+
+    const url =
+      "https://wa.me/50941626470?text=" +
+      encodeURIComponent(message);
+
+
+    window.open(
+      url,
+      "_blank"
+    );
+
+  }
+
+
+  /*
+   * Modifier la commande
+   */
+  function modifierCommande() {
+
+    document.getElementById(
+      "confirmation"
+    ).style.display = "none";
+
+
+    document.getElementById(
+      "commande"
+    ).scrollIntoView({
+      behavior: "smooth"
+    });
+
+  }
+
+
+  /*
+   * Protection du texte affiché dans HTML
+   */
+  function echapper(texte) {
+
+    return String(texte)
+
+      .replace(/&/g, "&amp;")
+
+      .replace(/</g, "&lt;")
+
+      .replace(/>/g, "&gt;")
+
+      .replace(/"/g, "&quot;")
+
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  /*
+   * Mise à jour automatique du résumé
+   */
+  document
+    .getElementById("produit")
+    .addEventListener(
+      "change",
+      function() {
+
+        setTimeout(
+          mettreAJourResume,
+          50
+        );
+
+      }
+    );
+
+
+  document
+    .getElementById("options")
+    .addEventListener(
+      "change",
+      mettreAJourResume
+    );
+
+
+  /*
+   * Initialisation
+   */
+  setTimeout(
+    mettreAJourResume,
+    100
+  );
+
+</script>
+
 </body>
 </html>
